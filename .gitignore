@@ -1,0 +1,26 @@
+## [Visual Studio / Rider / .NET]
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# JetBrains Rider & IntelliJ
+.idea/
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+
+# Sensitive configuration / local environments
+appsettings.Development.json
+appsettings.*.local.json
+
+# Build and Publish outputs
+[Pp]ublish/
+[Pp]ublished/
+
+# Logs
+*.log
