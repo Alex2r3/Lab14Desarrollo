@@ -13,13 +13,15 @@ builder.Services.AddApiServices(builder.Configuration);
 
 var app = builder.Build();
 
-// Habilitar Swagger siempre para que la API sea visible y operable en Render
+// Habilitar Swagger en la ruta /swagger y redirigir la raíz / hacia /swagger
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lab13-2 API v1");
-    c.RoutePrefix = string.Empty;
+    c.RoutePrefix = "swagger";
 });
+
+app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
