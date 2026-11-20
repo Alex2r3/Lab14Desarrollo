@@ -13,6 +13,9 @@ builder.Services.AddApiServices(builder.Configuration);
 
 var app = builder.Build();
 
+// Mostrar detalles de errores para facilitar depuración en Render
+app.UseDeveloperExceptionPage();
+
 // Habilitar Swagger en la ruta /swagger y redirigir la raíz / hacia /swagger
 app.UseSwagger();
 app.UseSwaggerUI(c =>
